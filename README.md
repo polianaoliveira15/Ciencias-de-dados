@@ -1,2 +1,2 @@
 # Ciencias-de-dados
-Poliana e Daiane 
+Poliana Goes e Daiane 
