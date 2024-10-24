@@ -1,6 +1,6 @@
 const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/dados-globais.json'
 
-async function visualizarInformacoesGlobais() { 
+async function visualizarInformacoesGlobais(){
     const res = await fetch(url)
     const dados = await res.json()
     const pessoasConectadas = (dados.total_pessoas_conectadas) / 1e9
@@ -13,6 +13,8 @@ async function visualizarInformacoesGlobais() {
     paragrafo.classList.add('graficos-container__texto')
     paragrafo.innerHTML = ` Você sabia que o mundo tem <span>${pessoasNoMundo} bilhões</span> de pessoas e que aproximadamente 
     <sapan>${pessoasConectadas} bilhões </span> estão conectadas em alguma rede social e passam em média <span>${horas}</span> horas e <span>${minutos}</span> conectadas.
-    <br> Isso significa que aproximadamente ${porcentagemConectada}% de pessoas estão conectadas em alguma rede social.`}
-
+    <br> Isso significa que aproximadamente ${porcentagemConectada}% de pessoas estão conectadas em alguma rede social.`
+    const container = document.getElementById("graficos-container")
+    container.appendChild(paragrafo)
+}
     visualizarInformacoesGlobais()
