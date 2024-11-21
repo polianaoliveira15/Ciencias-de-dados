@@ -1,13 +1,13 @@
-const url = 'https://raw.githubusercontent.com/guilhermeonrails/api/main/dados-globais.json'
+const url = 'https://raw.githubusercontent.com/polianaoliveira15/Ciencias-de-dados/refs/heads/main/base-de-dados/trabalho-dados-gerais.json'
 
 async function visualizarInformacoesGlobais(){
     const res = await fetch(url)
     const dados = await res.json()
-    const pessoasConectadas = (dados.total_pessoas_conectadas) / 1e9
+    const pessoasTrabalhano = (dados.total_pessoas_empregadas) / 1e9
     const pessoasNoMundo = (dados.total_pessoas_mundo) / 1e9
-    const horas = parseInt (dados.tempo_medio)
-    const minutos = Math.round ((dados.tempo_medio - horas) * 100)
-    const porcentagemConectada = ((pessoasConectadas / pessoasNoMundo) * 100).toFixed(2)
+    const horas = parseInt (dados.tempo_medio_dia__trabalhando)
+    const minutos = Math.round ((dados.tempo_medio_dia_trabalhando- horas) * 100)
+    const porcentagemConectada = ((pessoasTrabalhando / total_pessoas_mundo) * 100).toFixed(2)
 
     const paragrafo = document.createElement ('p')
     paragrafo.classList.add('graficos-container__texto')
